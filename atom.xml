@@ -6,10 +6,29 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-25T13:22:13.271Z</updated>
+  <updated>2019-05-22T11:39:59.845Z</updated>
   <id>http://yoursite.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hello world</title>
+    <link href="http://yoursite.com/2019/05/22/hello-world/"/>
+    <id>http://yoursite.com/2019/05/22/hello-world/</id>
+    <published>2019-05-22T11:16:38.000Z</published>
+    <updated>2019-05-22T11:39:59.845Z</updated>
+    
+    <content type="html"><![CDATA[<p>   本来早就说要搭建自己的博客，其实确实也早就搭建好了，但是一直懒得配置主题文件，也懒得学markdown语法…所以就搁置了。</p><p>   今天总算是功德圆满，撒花✿✿ヽ(°▽°)ノ✿。<br>   <a id="more"></a><br>   为什么搭博客呢？</p><ul><li>首先还是因为装x了，因为我看基本上web 手都有自己的博客，赶紧搭一个自己的，不然都不好意思说自己是web狗了</li><li>第二其实还是想和大家分享一下我的一点思想，以前都是写印象笔记给自己看，觉得能把别人说懂才是真的自己搞懂了吧</li><li><p>如果能因为博客结识到志同道合的朋友就更好啦</p><p>介绍一下自己吧，目前河南某菜鸡学校读大二，目前是一名ctf 的web手（目前比较菜，但是相信以后会变强的），偶尔也喜欢玩硬件，但是只是惊艳于物理攻击的效果强大，并没有很深入的钻研。未来不一定想在ctf上有很大建树，更希望自己的web安全水平跻身大佬行列。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;   本来早就说要搭建自己的博客，其实确实也早就搭建好了，但是一直懒得配置主题文件，也懒得学markdown语法…所以就搁置了。&lt;/p&gt;
+&lt;p&gt;   今天总算是功德圆满，撒花✿✿ヽ(°▽°)ノ✿。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Blind</title>
