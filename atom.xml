@@ -6,10 +6,30 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-23T12:51:55.356Z</updated>
+  <updated>2019-08-05T16:02:05.765Z</updated>
   <id>http://yoursite.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019ciscn总结</title>
+    <link href="http://yoursite.com/2019/08/05/2019ciscn%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2019/08/05/2019ciscn总结/</id>
+    <published>2019-08-05T15:16:21.000Z</published>
+    <updated>2019-08-05T16:02:05.765Z</updated>
+    
+    <content type="html"><![CDATA[<p>人生第一次参加国家级的比赛，可以说从报名，到初赛，到分区赛，到决赛，都兴奋又紧张。<br>同时对ctf的认识多了许多，以前总感觉那些群里说话的人都好厉害，感觉自己与别人差很远.<br>经过这次比赛发现，其实自己身边的学长在ctf圈已经是很厉害很厉害了，其他ctfer也没有这么强.<br>接下来要做的是抓紧奋起直追，努力提高，我们现在太缺web手了。</p><a id="more"></a><p>这次总决赛的web题其实挺没用体验感的，虽然说这些选手互相出题不能代表未来ctf的走向，但是还是暴露了自己的不足.<br>第一天都是<strong>web与AI，JAVA，逆向，pwn的结合</strong>，没有纯php的web，所以我们根本无从下手。<br>第二天才出现一道纯php,然后这个题挺简单的，一个cookie伪造，然后用文件名写马。不得不说，独立解题的感觉很好。</p><p>总之我的体会就是两点:<br>1、web的方向一直在变，大家都在疯狂结合各自知识点，我不能再做一个纯web手了，而是要做一个web安全工程师，也就是简单的逆向，pwn，java，AI这些知识都需要稍微会一点<br>2、还是要提升手速，手速太慢了，<strong>而且太多的东西都没有实践，感觉看懂了就行了，但是实际做起来会很费劲</strong>，比如写一个覆盖文件的shell脚本都花了很久，还出错了，tar打包，端口转发，都相当不熟练。</p><p>收获到的知识点：</p><ul><li>ssti可以通过 获取对方的秘钥，然后flask模块由于是客户端ssession,所以可以伪造ssesion</li><li>&lt;?php  可以用短标签 &lt;?=  与  &lt;?  代替</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;人生第一次参加国家级的比赛，可以说从报名，到初赛，到分区赛，到决赛，都兴奋又紧张。&lt;br&gt;同时对ctf的认识多了许多，以前总感觉那些群里说话的人都好厉害，感觉自己与别人差很远.&lt;br&gt;经过这次比赛发现，其实自己身边的学长在ctf圈已经是很厉害很厉害了，其他ctfer也没有这么强.&lt;br&gt;接下来要做的是抓紧奋起直追，努力提高，我们现在太缺web手了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="-ctf" scheme="http://yoursite.com/tags/ctf/"/>
+    
+  </entry>
   
   <entry>
     <title>prompt(1)</title>
